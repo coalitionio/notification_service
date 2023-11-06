@@ -31,6 +31,9 @@ public class EmailSendServiceImpl implements EmailSendService {
             MimeMessageHelper mimeMessageHelper = new MimeMessageHelper(mimeMessage);
             mimeMessageHelper.setTo(email.getTo());
             mimeMessageHelper.setFrom("auth.service@coalition.io");
+            if (email.getSubject() != null) {
+                mimeMessageHelper.setSubject(email.getSubject());
+            }
             mimeMessageHelper.setText(emailContent,true);
             javaMailSender.send(mimeMessage);
         }catch(Exception e){

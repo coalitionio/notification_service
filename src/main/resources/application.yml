@@ -34,7 +34,10 @@ spring:
       bootstrap-servers: kafka.wyvernpserver.tech:9092
       auto-offset-reset: latest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.connect.json.JsonDeserializer
+#      value-deserializer: org.apache.kafka.connect.json.JsonDeserializer
+      value-deserializer: org.springframework.kafka.support.serializer.JsonDeserializer
+      properties:
+        spring.json.value.default.type: tech.chickies.notificationserver.mk.consumer.ExportMessage
       group-id: mk
 server:
   port: 8006

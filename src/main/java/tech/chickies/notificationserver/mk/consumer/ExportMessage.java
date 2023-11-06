@@ -1,14 +1,21 @@
 package tech.chickies.notificationserver.mk.consumer;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
+import jakarta.annotation.Nullable;
+import lombok.*;
+
+import java.io.Serializable;
 
 @Data
 @AllArgsConstructor
-public class ExportMessage {
+@NoArgsConstructor
+@Builder
+@Getter
+@Setter
+public class ExportMessage  {
 
     private String apiEndpoint;
 
-    private String emailSender;
+    @Nullable
+    private String emailSender = "phonglethanh2@gmail.com";
 }
 
