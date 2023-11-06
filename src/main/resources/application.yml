@@ -34,7 +34,7 @@ spring:
       bootstrap-servers: kafka.wyvernpserver.tech:9092
       auto-offset-reset: latest
       key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.connect.json.JsonDeserializer
       group-id: mk
 server:
   port: 8006
