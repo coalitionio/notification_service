@@ -3,15 +3,21 @@ package tech.chickies.notificationserver.mail;
 
 import lombok.AllArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 
+@CrossOrigin(originPatterns = {"http://localhost:3000",
+        "https://mamakitchen.tech",
+        "http://mamakitchen.tech",
+        "http://localhost:5173",
+        "http://localhost:3001",
+        "http://localhost:3002",
+        "http://localhost:3003",
+        "https://localhost:3000",
+        "https://www.mamakitchen.tech"})
 @RestController
 @RequestMapping("/mail")
 @AllArgsConstructor
